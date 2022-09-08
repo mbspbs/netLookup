@@ -12,8 +12,10 @@ class Table:
     """
     
     def __init__(self) -> None:
-        routingTable = {}
-        pass
+        self.lookupTable = {
+            'v4': {},
+            'v6': {}
+        }
     
     def add(self, data: dict) -> bool:
         print("Not yet implemented.")
