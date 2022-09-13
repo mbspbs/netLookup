@@ -5,9 +5,9 @@ cached information by subnet to alieveate multiple lookups to a source api.
 
 import ipaddress
 
+
 class Table:
-    """
-    This class creates a table that will allow an indexed lookup into stored
+    """This class creates a table that will allow an indexed lookup into stored
     network data.
     """
     
@@ -19,6 +19,7 @@ class Table:
     
     def add(self, data: dict) -> bool:
         print("Not yet implemented.")
+
         pass
     
     def query(self, ip: ipaddress.ip_address) -> dict:
