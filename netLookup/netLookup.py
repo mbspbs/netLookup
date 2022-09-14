@@ -10,14 +10,14 @@ class Table:
     """This class creates a table that will allow an indexed lookup into stored
     network data.
     """
-    
+
     def __init__(self) -> None:
         self.lookupTable = {"v4": {}, "v6": {}}
-        for number in range(32,8,-1):
-            self.lookupTable['v4'][number] = list()
-        for number in range(64,12,-1):
-            self.lookupTable['v6'][number] = list()
-    
+        for number in range(32, 8, -1):
+            self.lookupTable["v4"][number] = list()
+        for number in range(64, 12, -1):
+            self.lookupTable["v6"][number] = list()
+
     def add(self, entry: dict) -> bool:
         """Adds entry to lookup table.
 
@@ -36,14 +36,14 @@ class Table:
         ), False
         version = entry["network"].version
         version = f"v{version}"
-        netmask = entry['network'].prefixlen
+        netmask = entry["network"].prefixlen
 
         try:
-            self.lookupTable[version][netmask].append((entry["network"],entry['data']))
+            self.lookupTable[version][netmask].append((entry["network"], entry["data"]))
             return True
         except:
             return False
-    
+
     def query(self, ip: ipaddress.ip_address) -> dict:
         print("Not yet implemented.")
         pass
