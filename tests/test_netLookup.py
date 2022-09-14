@@ -27,7 +27,7 @@ def test_Table3():
     }
     with pytest.raises(AssertionError):
         table.add(entry)
-    
+
 def test_Query1():
     table = netLookup.Table()
     entry = {
