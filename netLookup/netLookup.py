@@ -24,8 +24,8 @@ class Table:
         Args:
             entry (dict): Must contain two keys, network and data.
                 Keys:
-                network: must be a ipaddress.ip_network variable
-                data: arbitrary data
+                network: Must be a ipaddress.ip_network variable.
+                data: Should be a dict of data about the network, but can store anything.
 
         Returns:
             bool: Returns true if successful, and false if there is an issue.
