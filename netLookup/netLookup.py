@@ -45,5 +45,24 @@ class Table:
             return False
 
     def query(self, ip: ipaddress.ip_address) -> dict:
+        """Returns data about the network and IP address is in.
+
+        Args:
+            ip (ipaddress.ip_address): IP address to be queried.
+
+        Returns:
+            dict: dictionary about the network that the queried IP address is in.
+        """
+        version = ip.version
+        version = f"v{version}"
+        
+        for netmask in self.lookupTable[version]:
+            print(netmask)
+            netList = self.lookupTable[version][netmask]
+            for network in netList:
+                if ip in network[0]:
+                    return network[1]
+        raise ValueError("Network not found.")
+    
         print("Not yet implemented.")
         pass
