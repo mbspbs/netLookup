@@ -64,5 +64,10 @@ class Table:
                     return network[1]
         raise ValueError("Network not found.")
     
+    def save():
+        print("Not yet implemented.")
+        pass
+    
+    def load():
         print("Not yet implemented.")
         pass
