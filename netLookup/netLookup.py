@@ -57,7 +57,6 @@ class Table:
         version = f"v{version}"
         
         for netmask in self.lookupTable[version]:
-            print(netmask)
             netList = self.lookupTable[version][netmask]
             for network in netList:
                 if ip in network[0]:
