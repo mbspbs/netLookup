@@ -13,9 +13,9 @@ class Table:
 
     def __init__(self) -> None:
         self.lookupTable = {"v4": {}, "v6": {}}
-        for number in range(32, 8, -1):
+        for number in range(32, 0, -1):
             self.lookupTable["v4"][number] = list()
-        for number in range(64, 12, -1):
+        for number in range(64, 0, -1):
             self.lookupTable["v6"][number] = list()
 
     def add(self, entry: dict) -> bool:
