@@ -49,5 +49,5 @@ def test_Query2():
     table.add(entry)
     ip = ipaddress.ip_address('2700:100f:b000:0100::100')
     with pytest.raises(ValueError):
-        data = table.query(ip)
+        _ = table.query(ip)
     
