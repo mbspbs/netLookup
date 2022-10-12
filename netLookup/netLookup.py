@@ -3,7 +3,7 @@ This tool will help a user cache data about an IP address and then look up the
 cached information by subnet to alieveate multiple lookups to a source api.
 """
 
-import ipaddress
+import ipaddress, pickle, os
 
 
 class Table:
@@ -63,10 +63,12 @@ class Table:
                     return network[1]
         raise ValueError("Network not found.")
     
-    def save():
-        print("Not yet implemented.")
-        pass
-    
-    def load():
-        print("Not yet implemented.")
-        pass
+    def save(self, name = 'table.pickle'):
+        with open(os.path.join(os.path.dirname(__file__), name), 'wb') as outfile:
+            pickle.dump(self.lookupTable, outfile)
+        return True
+
+    def load(self, name = 'table.pickle'):
+        with open(os.path.join(os.path.dirname(__file__), name), 'rb') as infile:
+            self.lookupTable = pickle.load(infile)
+        return True
