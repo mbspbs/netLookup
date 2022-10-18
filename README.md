@@ -1,7 +1,5 @@
 # netLookup
 
-|   |metacov|
-
 ## Overview
 This is a tool that will help limit calls to an IP address lookup tool by reusing data that had been previously collected.
 
