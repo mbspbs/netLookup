@@ -51,6 +51,16 @@ def test_Query2():
     with pytest.raises(ValueError):
         _ = table.query(ip)
 
+def test_Save1():
+    table = netLookup.Table()
+    entry = {
+        'network': ipaddress.ip_network('2600:100f:b000::/44'),
+        'data': 'stuff'
+    }
+    table.add(entry)
+    table.save()
+    pass
+
 def test_Load1():
     table = netLookup.Table()
     table.load()
@@ -63,13 +73,3 @@ def test_Load2():
     table.load()
     ip = ipaddress.ip_address('2600:100f:b000:0100::100')
     _ = table.query(ip)
-
-def test_Save1():
-    table = netLookup.Table()
-    entry = {
-        'network': ipaddress.ip_network('2600:100f:b000::/44'),
-        'data': 'stuff'
-    }
-    table.add(entry)
-    table.save()
-    pass
